@@ -1,0 +1,12 @@
+{
+  "_runtime": 0,
+  "_step": 0,
+  "_timestamp": 1761554603.312853,
+  "_wandb.runtime": 0,
+  "mean_baseline_ppl": 5.394802570343018,
+  "mean_improvement": 1.9081114530563352,
+  "mean_patched_ppl": 5.291845798492432,
+  "std_baseline_ppl": 0.013781370595097542,
+  "std_improvement": 0.2020651400089264,
+  "std_patched_ppl": 0.003894548630341887
+}

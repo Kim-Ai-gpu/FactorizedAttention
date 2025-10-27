@@ -1,0 +1,7 @@
+FactorizedAttention
+
+trainable params: 1,404,336 || all params: 125,844,144 || trainable%: 1.1159
+
+StandardAttention
+
+trainable params: 811,008 || all params: 125,250,816 || trainable%: 0.6475

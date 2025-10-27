@@ -1,0 +1,45 @@
+model_name: "gpt2"
+seeds: [42, 10044, 1594044]
+
+dataset_name: "codeparrot/codeparrot-clean" # Baseline code dataset
+# dataset_name: "meta-math/MetaMathQA" # Advanced math problems
+# dataset_name: "deepmind/code_contests" # Competitive programming problems
+
+
+train_tokens: 2100000
+eval_tokens: 220000
+block_size: 256
+
+lora_config:
+  r: 8
+  lora_alpha: 32
+  lora_dropout: 0.1
+  target_modules:
+    - "c_attn"
+    - "c_proj"
+
+lora_config_patched:
+  r: 8
+  lora_alpha: 32
+  lora_dropout: 0.1
+  target_modules:
+    - "c_attn"
+    - "c_proj"
+
+wandb_config:
+  project_name: "att-gpu-experiment"
+  run_name: "baseline_vs_patched_lora"
+
+training_args:
+  output_dir: "./results"
+  eval_strategy: "epoch"
+  learning_rate: 0.0003
+  weight_decay: 0.01
+  num_train_epochs: 1.0
+  per_device_train_batch_size: 8
+  per_device_eval_batch_size: 8
+  save_strategy: "epoch" # save checkpoints at the end of each epoch
+  save_total_limit: 2 # save only the last 2 checkpoints
+  logging_steps: 50
+  fp16: True # enable mixed precision training for better performance on GPUs
+  report_to: "wandb" # report metrics to wandb

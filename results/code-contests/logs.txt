@@ -1,0 +1,1243 @@
+/usr/local/lib/python3.11/dist-packages/pydantic/_internal/_generate_schema.py:2225: UnsupportedFieldAttributeWarning: The 'repr' attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. 'repr' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+/usr/local/lib/python3.11/dist-packages/pydantic/_internal/_generate_schema.py:2225: UnsupportedFieldAttributeWarning: The 'frozen' attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. 'frozen' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+2025-10-27 09:03:09.393339: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:477] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1761555789.416324     166 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1761555789.423249     166 cuda_blas.cc:1418] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+
+--- Running Experiment with Seed: 42 ---
+wandb: Currently logged in as: lam983039 (lam983039-student) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: WARNING Using a boolean value for 'reinit' is deprecated. Use 'return_previous' or 'finish_previous' instead.
+wandb: Tracking run with wandb version 0.21.0
+wandb: Run data is saved locally in /kaggle/working/faskdglklllkvmcvmbbzbzxcbz/wandb/run-20251027_090313-kqwzlycf
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run baseline_vs_patched_lora_code_contests_seed42
+wandb: ⭐️ View project at https://wandb.ai/lam983039-student/att-gpu-experiment
+wandb: 🚀 View run at https://wandb.ai/lam983039-student/att-gpu-experiment/runs/kqwzlycf
+Resolving data files: 100%|█████████████████████| 39/39 [00:00<00:00, 66.73it/s]
+Resolving data files: 100%|██████████████████| 39/39 [00:00<00:00, 72060.73it/s]
+Collecting ~2.1M tokens...
+Token indices sequence length is longer than the specified maximum sequence length for this model (13399 > 1024). Running this sequence through the model will result in indexing errors
+Collected 2406474 tokens.
+Collecting ~0.2M tokens...
+Collected 259787 tokens.
+--- Preparing Baseline Model with LoRA ---
+model.safetensors: 100%|██████████████████████| 548M/548M [00:01<00:00, 308MB/s]
+generation_config.json: 100%|███████████████████| 124/124 [00:00<00:00, 285kB/s]
+/usr/local/lib/python3.11/dist-packages/peft/tuners/lora/layer.py:1803: UserWarning: fan_in_fan_out is set to False but the target module is `Conv1D`. Setting fan_in_fan_out to True.
+  warnings.warn(
+trainable params: 811,008 || all params: 125,250,816 || trainable%: 0.6475
+
+--- Preparing Patched Model with LoRA ---
+  ✓ base_model.model.transformer.h.0.attn.alpha_q      | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.0.attn.alpha_k      | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.0.attn.temperature  | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.0.attn.q_w1.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.0.attn.q_w2.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.0.attn.k_w3.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.0.attn.k_w4.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.0.attn.q_proj.weight | Shape: (64, 128)            | Params: 8,192
+  ✓ base_model.model.transformer.h.0.attn.k_proj.weight | Shape: (64, 128)            | Params: 8,192
+  ✓ base_model.model.transformer.h.0.attn.pre_norm_q.weight | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.0.attn.pre_norm_q.bias | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.0.attn.pre_norm_k.weight | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.0.attn.pre_norm_k.bias | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.1.attn.alpha_q      | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.1.attn.alpha_k      | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.1.attn.temperature  | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.1.attn.q_w1.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.1.attn.q_w2.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.1.attn.k_w3.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.1.attn.k_w4.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.1.attn.q_proj.weight | Shape: (64, 128)            | Params: 8,192
+  ✓ base_model.model.transformer.h.1.attn.k_proj.weight | Shape: (64, 128)            | Params: 8,192
+  ✓ base_model.model.transformer.h.1.attn.pre_norm_q.weight | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.1.attn.pre_norm_q.bias | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.1.attn.pre_norm_k.weight | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.1.attn.pre_norm_k.bias | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.2.attn.alpha_q      | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.2.attn.alpha_k      | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.2.attn.temperature  | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.2.attn.q_w1.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.2.attn.q_w2.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.2.attn.k_w3.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.2.attn.k_w4.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.2.attn.q_proj.weight | Shape: (64, 128)            | Params: 8,192
+  ✓ base_model.model.transformer.h.2.attn.k_proj.weight | Shape: (64, 128)            | Params: 8,192
+  ✓ base_model.model.transformer.h.2.attn.pre_norm_q.weight | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.2.attn.pre_norm_q.bias | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.2.attn.pre_norm_k.weight | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.2.attn.pre_norm_k.bias | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.3.attn.alpha_q      | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.3.attn.alpha_k      | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.3.attn.temperature  | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.3.attn.q_w1.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.3.attn.q_w2.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.3.attn.k_w3.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.3.attn.k_w4.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.3.attn.q_proj.weight | Shape: (64, 128)            | Params: 8,192
+  ✓ base_model.model.transformer.h.3.attn.k_proj.weight | Shape: (64, 128)            | Params: 8,192
+  ✓ base_model.model.transformer.h.3.attn.pre_norm_q.weight | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.3.attn.pre_norm_q.bias | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.3.attn.pre_norm_k.weight | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.3.attn.pre_norm_k.bias | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.4.attn.alpha_q      | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.4.attn.alpha_k      | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.4.attn.temperature  | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.4.attn.q_w1.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.4.attn.q_w2.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.4.attn.k_w3.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.4.attn.k_w4.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.4.attn.q_proj.weight | Shape: (64, 128)            | Params: 8,192
+  ✓ base_model.model.transformer.h.4.attn.k_proj.weight | Shape: (64, 128)            | Params: 8,192
+  ✓ base_model.model.transformer.h.4.attn.pre_norm_q.weight | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.4.attn.pre_norm_q.bias | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.4.attn.pre_norm_k.weight | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.4.attn.pre_norm_k.bias | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.5.attn.alpha_q      | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.5.attn.alpha_k      | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.5.attn.temperature  | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.5.attn.q_w1.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.5.attn.q_w2.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.5.attn.k_w3.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.5.attn.k_w4.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.5.attn.q_proj.weight | Shape: (64, 128)            | Params: 8,192
+  ✓ base_model.model.transformer.h.5.attn.k_proj.weight | Shape: (64, 128)            | Params: 8,192
+  ✓ base_model.model.transformer.h.5.attn.pre_norm_q.weight | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.5.attn.pre_norm_q.bias | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.5.attn.pre_norm_k.weight | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.5.attn.pre_norm_k.bias | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.6.attn.alpha_q      | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.6.attn.alpha_k      | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.6.attn.temperature  | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.6.attn.q_w1.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.6.attn.q_w2.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.6.attn.k_w3.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.6.attn.k_w4.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.6.attn.q_proj.weight | Shape: (64, 128)            | Params: 8,192
+  ✓ base_model.model.transformer.h.6.attn.k_proj.weight | Shape: (64, 128)            | Params: 8,192
+  ✓ base_model.model.transformer.h.6.attn.pre_norm_q.weight | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.6.attn.pre_norm_q.bias | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.6.attn.pre_norm_k.weight | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.6.attn.pre_norm_k.bias | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.7.attn.alpha_q      | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.7.attn.alpha_k      | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.7.attn.temperature  | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.7.attn.q_w1.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.7.attn.q_w2.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.7.attn.k_w3.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.7.attn.k_w4.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.7.attn.q_proj.weight | Shape: (64, 128)            | Params: 8,192
+  ✓ base_model.model.transformer.h.7.attn.k_proj.weight | Shape: (64, 128)            | Params: 8,192
+  ✓ base_model.model.transformer.h.7.attn.pre_norm_q.weight | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.7.attn.pre_norm_q.bias | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.7.attn.pre_norm_k.weight | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.7.attn.pre_norm_k.bias | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.8.attn.alpha_q      | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.8.attn.alpha_k      | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.8.attn.temperature  | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.8.attn.q_w1.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.8.attn.q_w2.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.8.attn.k_w3.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.8.attn.k_w4.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.8.attn.q_proj.weight | Shape: (64, 128)            | Params: 8,192
+  ✓ base_model.model.transformer.h.8.attn.k_proj.weight | Shape: (64, 128)            | Params: 8,192
+  ✓ base_model.model.transformer.h.8.attn.pre_norm_q.weight | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.8.attn.pre_norm_q.bias | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.8.attn.pre_norm_k.weight | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.8.attn.pre_norm_k.bias | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.9.attn.alpha_q      | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.9.attn.alpha_k      | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.9.attn.temperature  | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.9.attn.q_w1.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.9.attn.q_w2.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.9.attn.k_w3.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.9.attn.k_w4.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.9.attn.q_proj.weight | Shape: (64, 128)            | Params: 8,192
+  ✓ base_model.model.transformer.h.9.attn.k_proj.weight | Shape: (64, 128)            | Params: 8,192
+  ✓ base_model.model.transformer.h.9.attn.pre_norm_q.weight | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.9.attn.pre_norm_q.bias | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.9.attn.pre_norm_k.weight | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.9.attn.pre_norm_k.bias | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.10.attn.alpha_q     | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.10.attn.alpha_k     | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.10.attn.temperature | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.10.attn.q_w1.weight | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.10.attn.q_w2.weight | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.10.attn.k_w3.weight | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.10.attn.k_w4.weight | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.10.attn.q_proj.weight | Shape: (64, 128)            | Params: 8,192
+  ✓ base_model.model.transformer.h.10.attn.k_proj.weight | Shape: (64, 128)            | Params: 8,192
+  ✓ base_model.model.transformer.h.10.attn.pre_norm_q.weight | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.10.attn.pre_norm_q.bias | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.10.attn.pre_norm_k.weight | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.10.attn.pre_norm_k.bias | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.11.attn.alpha_q     | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.11.attn.alpha_k     | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.11.attn.temperature | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.11.attn.q_w1.weight | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.11.attn.q_w2.weight | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.11.attn.k_w3.weight | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.11.attn.k_w4.weight | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.11.attn.q_proj.weight | Shape: (64, 128)            | Params: 8,192
+  ✓ base_model.model.transformer.h.11.attn.k_proj.weight | Shape: (64, 128)            | Params: 8,192
+  ✓ base_model.model.transformer.h.11.attn.pre_norm_q.weight | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.11.attn.pre_norm_q.bias | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.11.attn.pre_norm_k.weight | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.11.attn.pre_norm_k.bias | Shape: (64,)                | Params: 64
+============================================================
+Total Factorized Attention params: 593,328
+============================================================
+
+trainable params: 1,404,336 || all params: 125,844,144 || trainable%: 1.1159
+Found 2 GPUs.
+
+--- Training Baseline LoRA Model ---
+No label_names provided for model class `PeftModelForCausalLM`. Since `PeftModel` hides base models input arguments, if label_names is not given, label_names can't be set automatically within `Trainer`. Note that empty label_names list will be used instead.
+wandb: WARNING The `run_name` is currently set to the same value as `TrainingArguments.output_dir`. If this was not intended, please specify a different run name by setting the `TrainingArguments.run_name` parameter.
+  0%|                                                   | 0/588 [00:00<?, ?it/s]`loss_type=None` was set in the config but it is unrecognised.Using the default loss: `ForCausalLMLoss`.
+{'loss': 1.019, 'grad_norm': 24059.84375, 'learning_rate': 0.00027499999999999996, 'epoch': 0.09}
+{'loss': 0.8656, 'grad_norm': 24197.994140625, 'learning_rate': 0.00024948979591836733, 'epoch': 0.17}
+{'loss': 0.8499, 'grad_norm': 30513.35546875, 'learning_rate': 0.00022397959183673467, 'epoch': 0.26}
+{'loss': 0.792, 'grad_norm': 33219.75390625, 'learning_rate': 0.00019846938775510203, 'epoch': 0.34}
+{'loss': 0.7939, 'grad_norm': 29648.521484375, 'learning_rate': 0.00017295918367346937, 'epoch': 0.43}
+{'loss': 0.7515, 'grad_norm': 31634.724609375, 'learning_rate': 0.0001474489795918367, 'epoch': 0.51}
+{'loss': 0.7504, 'grad_norm': 30218.36328125, 'learning_rate': 0.00012193877551020408, 'epoch': 0.6}
+{'loss': 0.7443, 'grad_norm': 36123.49609375, 'learning_rate': 9.642857142857143e-05, 'epoch': 0.68}
+{'loss': 0.7517, 'grad_norm': 24292.474609375, 'learning_rate': 7.091836734693877e-05, 'epoch': 0.77}
+{'loss': 0.7258, 'grad_norm': 32443.060546875, 'learning_rate': 4.540816326530612e-05, 'epoch': 0.85}
+{'loss': 0.7198, 'grad_norm': 35420.75, 'learning_rate': 1.989795918367347e-05, 'epoch': 0.94}
+100%|█████████████████████████████████████████| 588/588 [04:26<00:00,  2.40it/s]/usr/local/lib/python3.11/dist-packages/torch/nn/parallel/_functions.py:70: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn(
+
+  0%|                                                    | 0/64 [00:00<?, ?it/s]
+  5%|██                                          | 3/64 [00:00<00:08,  7.59it/s]
+  6%|██▊                                         | 4/64 [00:00<00:10,  5.53it/s]
+  8%|███▍                                        | 5/64 [00:00<00:12,  4.57it/s]
+  9%|████▏                                       | 6/64 [00:01<00:13,  4.24it/s]
+ 11%|████▊                                       | 7/64 [00:01<00:14,  3.94it/s]
+ 12%|█████▌                                      | 8/64 [00:01<00:14,  3.80it/s]
+ 14%|██████▏                                     | 9/64 [00:02<00:14,  3.67it/s]
+ 16%|██████▋                                    | 10/64 [00:02<00:14,  3.62it/s]
+ 17%|███████▍                                   | 11/64 [00:02<00:14,  3.57it/s]
+ 19%|████████                                   | 12/64 [00:03<00:14,  3.49it/s]
+ 20%|████████▋                                  | 13/64 [00:03<00:14,  3.52it/s]
+ 22%|█████████▍                                 | 14/64 [00:03<00:14,  3.50it/s]
+ 23%|██████████                                 | 15/64 [00:03<00:14,  3.49it/s]
+ 25%|██████████▊                                | 16/64 [00:04<00:13,  3.48it/s]
+ 27%|███████████▍                               | 17/64 [00:04<00:13,  3.49it/s]
+ 28%|████████████                               | 18/64 [00:04<00:13,  3.48it/s]
+ 30%|████████████▊                              | 19/64 [00:05<00:12,  3.49it/s]
+ 31%|█████████████▍                             | 20/64 [00:05<00:12,  3.45it/s]
+ 33%|██████████████                             | 21/64 [00:05<00:12,  3.47it/s]
+ 34%|██████████████▊                            | 22/64 [00:05<00:12,  3.47it/s]
+ 36%|███████████████▍                           | 23/64 [00:06<00:11,  3.49it/s]
+ 38%|████████████████▏                          | 24/64 [00:06<00:11,  3.46it/s]
+ 39%|████████████████▊                          | 25/64 [00:06<00:11,  3.47it/s]
+ 41%|█████████████████▍                         | 26/64 [00:07<00:10,  3.47it/s]
+ 42%|██████████████████▏                        | 27/64 [00:07<00:10,  3.45it/s]
+ 44%|██████████████████▊                        | 28/64 [00:07<00:10,  3.45it/s]
+ 45%|███████████████████▍                       | 29/64 [00:07<00:10,  3.42it/s]
+ 47%|████████████████████▏                      | 30/64 [00:08<00:09,  3.41it/s]
+ 48%|████████████████████▊                      | 31/64 [00:08<00:09,  3.47it/s]
+ 50%|█████████████████████▌                     | 32/64 [00:08<00:09,  3.47it/s]
+ 52%|██████████████████████▏                    | 33/64 [00:09<00:08,  3.46it/s]
+ 53%|██████████████████████▊                    | 34/64 [00:09<00:08,  3.47it/s]
+ 55%|███████████████████████▌                   | 35/64 [00:09<00:08,  3.46it/s]
+ 56%|████████████████████████▏                  | 36/64 [00:09<00:08,  3.45it/s]
+ 58%|████████████████████████▊                  | 37/64 [00:10<00:07,  3.41it/s]
+ 59%|█████████████████████████▌                 | 38/64 [00:10<00:07,  3.46it/s]
+ 61%|██████████████████████████▏                | 39/64 [00:10<00:07,  3.47it/s]
+ 62%|██████████████████████████▉                | 40/64 [00:11<00:06,  3.46it/s]
+ 64%|███████████████████████████▌               | 41/64 [00:11<00:06,  3.44it/s]
+ 66%|████████████████████████████▏              | 42/64 [00:11<00:06,  3.44it/s]
+ 67%|████████████████████████████▉              | 43/64 [00:11<00:06,  3.42it/s]
+ 69%|█████████████████████████████▌             | 44/64 [00:12<00:05,  3.42it/s]
+ 70%|██████████████████████████████▏            | 45/64 [00:12<00:05,  3.47it/s]
+ 72%|██████████████████████████████▉            | 46/64 [00:12<00:05,  3.46it/s]
+ 73%|███████████████████████████████▌           | 47/64 [00:13<00:04,  3.47it/s]
+ 75%|████████████████████████████████▎          | 48/64 [00:13<00:04,  3.45it/s]
+ 77%|████████████████████████████████▉          | 49/64 [00:13<00:04,  3.44it/s]
+ 78%|█████████████████████████████████▌         | 50/64 [00:13<00:04,  3.43it/s]
+ 80%|██████████████████████████████████▎        | 51/64 [00:14<00:03,  3.45it/s]
+ 81%|██████████████████████████████████▉        | 52/64 [00:14<00:03,  3.46it/s]
+ 83%|███████████████████████████████████▌       | 53/64 [00:14<00:03,  3.46it/s]
+ 84%|████████████████████████████████████▎      | 54/64 [00:15<00:02,  3.47it/s]
+ 86%|████████████████████████████████████▉      | 55/64 [00:15<00:02,  3.44it/s]
+ 88%|█████████████████████████████████████▋     | 56/64 [00:15<00:02,  3.44it/s]
+ 89%|██████████████████████████████████████▎    | 57/64 [00:16<00:02,  3.42it/s]
+ 91%|██████████████████████████████████████▉    | 58/64 [00:16<00:01,  3.46it/s]
+ 92%|███████████████████████████████████████▋   | 59/64 [00:16<00:01,  3.45it/s]
+ 94%|████████████████████████████████████████▎  | 60/64 [00:16<00:01,  3.44it/s]
+ 95%|████████████████████████████████████████▉  | 61/64 [00:17<00:00,  3.40it/s]
+ 97%|█████████████████████████████████████████▋ | 62/64 [00:17<00:00,  3.41it/s]
+ 98%|██████████████████████████████████████████▎| 63/64 [00:17<00:00,  3.46it/s]
+                                                                                
+{'eval_loss': 1.4671058654785156, 'eval_runtime': 18.7518, 'eval_samples_per_second': 54.075, 'eval_steps_per_second': 3.413, 'epoch': 1.0}
+100%|█████████████████████████████████████████| 588/588 [04:45<00:00,  2.40it/s]
+100%|███████████████████████████████████████████| 64/64 [00:18<00:00,  3.44it/s]
+{'train_runtime': 286.009, 'train_samples_per_second': 32.866, 'train_steps_per_second': 2.056, 'train_loss': 0.7925889897508686, 'epoch': 1.0}
+100%|█████████████████████████████████████████| 588/588 [04:45<00:00,  2.06it/s]
+/usr/local/lib/python3.11/dist-packages/torch/nn/parallel/_functions.py:70: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn(
+100%|███████████████████████████████████████████| 64/64 [00:18<00:00,  3.50it/s]
+
+--- Training Patched LoRA Model ---
+No label_names provided for model class `PeftModelForCausalLM`. Since `PeftModel` hides base models input arguments, if label_names is not given, label_names can't be set automatically within `Trainer`. Note that empty label_names list will be used instead.
+A ConfigError was raised whilst setting the number of model parameters in Weights & Biases config.
+{'loss': 0.9588, 'grad_norm': 22675.439453125, 'learning_rate': 0.00027499999999999996, 'epoch': 0.09}
+{'loss': 0.82, 'grad_norm': 25097.0234375, 'learning_rate': 0.00024948979591836733, 'epoch': 0.17}
+{'loss': 0.803, 'grad_norm': 48458.12890625, 'learning_rate': 0.00022397959183673467, 'epoch': 0.26}
+{'loss': 0.7478, 'grad_norm': 32134.884765625, 'learning_rate': 0.00019846938775510203, 'epoch': 0.34}
+{'loss': 0.7445, 'grad_norm': 34668.93359375, 'learning_rate': 0.00017295918367346937, 'epoch': 0.43}
+{'loss': 0.7054, 'grad_norm': 25233.166015625, 'learning_rate': 0.0001474489795918367, 'epoch': 0.51}
+{'loss': 0.7034, 'grad_norm': 33098.3515625, 'learning_rate': 0.00012193877551020408, 'epoch': 0.6}
+{'loss': 0.7016, 'grad_norm': 34931.26171875, 'learning_rate': 9.642857142857143e-05, 'epoch': 0.68}
+{'loss': 0.7047, 'grad_norm': 22980.30859375, 'learning_rate': 7.091836734693877e-05, 'epoch': 0.77}
+{'loss': 0.6808, 'grad_norm': 25126.9765625, 'learning_rate': 4.540816326530612e-05, 'epoch': 0.85}
+{'loss': 0.6751, 'grad_norm': 28360.529296875, 'learning_rate': 1.989795918367347e-05, 'epoch': 0.94}
+100%|█████████████████████████████████████████| 588/588 [06:09<00:00,  1.84it/s]
+  0%|                                                    | 0/64 [00:00<?, ?it/s]
+  3%|█▍                                          | 2/64 [00:00<00:10,  6.00it/s]
+  5%|██                                          | 3/64 [00:00<00:14,  4.08it/s]
+  6%|██▊                                         | 4/64 [00:01<00:16,  3.60it/s]
+  8%|███▍                                        | 5/64 [00:01<00:17,  3.34it/s]
+  9%|████▏                                       | 6/64 [00:02<00:26,  2.16it/s]
+ 11%|████▊                                       | 7/64 [00:02<00:23,  2.39it/s]
+ 12%|█████▌                                      | 8/64 [00:02<00:22,  2.54it/s]
+ 14%|██████▏                                     | 9/64 [00:03<00:20,  2.64it/s]
+ 16%|██████▋                                    | 10/64 [00:03<00:19,  2.74it/s]
+ 17%|███████▍                                   | 11/64 [00:03<00:18,  2.81it/s]
+ 19%|████████                                   | 12/64 [00:04<00:18,  2.84it/s]
+ 20%|████████▋                                  | 13/64 [00:04<00:17,  2.88it/s]
+ 22%|█████████▍                                 | 14/64 [00:04<00:17,  2.89it/s]
+ 23%|██████████                                 | 15/64 [00:05<00:17,  2.85it/s]
+ 25%|██████████▊                                | 16/64 [00:05<00:16,  2.87it/s]
+ 27%|███████████▍                               | 17/64 [00:05<00:16,  2.89it/s]
+ 28%|████████████                               | 18/64 [00:06<00:15,  2.91it/s]
+ 30%|████████████▊                              | 19/64 [00:06<00:15,  2.88it/s]
+ 31%|█████████████▍                             | 20/64 [00:06<00:15,  2.90it/s]
+ 33%|██████████████                             | 21/64 [00:07<00:14,  2.92it/s]
+ 34%|██████████████▊                            | 22/64 [00:07<00:14,  2.94it/s]
+ 36%|███████████████▍                           | 23/64 [00:07<00:14,  2.88it/s]
+ 38%|████████████████▏                          | 24/64 [00:08<00:13,  2.92it/s]
+ 39%|████████████████▊                          | 25/64 [00:08<00:13,  2.88it/s]
+ 41%|█████████████████▍                         | 26/64 [00:08<00:12,  2.97it/s]
+ 42%|██████████████████▏                        | 27/64 [00:09<00:12,  2.93it/s]
+ 44%|██████████████████▊                        | 28/64 [00:09<00:12,  2.93it/s]
+ 45%|███████████████████▍                       | 29/64 [00:09<00:11,  2.95it/s]
+ 47%|████████████████████▏                      | 30/64 [00:10<00:11,  2.95it/s]
+ 48%|████████████████████▊                      | 31/64 [00:10<00:11,  2.93it/s]
+ 50%|█████████████████████▌                     | 32/64 [00:11<00:10,  2.95it/s]
+ 52%|██████████████████████▏                    | 33/64 [00:11<00:10,  2.96it/s]
+ 53%|██████████████████████▊                    | 34/64 [00:11<00:10,  2.92it/s]
+ 55%|███████████████████████▌                   | 35/64 [00:12<00:09,  2.95it/s]
+ 56%|████████████████████████▏                  | 36/64 [00:12<00:09,  2.95it/s]
+ 58%|████████████████████████▊                  | 37/64 [00:12<00:09,  2.93it/s]
+ 59%|█████████████████████████▌                 | 38/64 [00:13<00:08,  2.98it/s]
+ 61%|██████████████████████████▏                | 39/64 [00:13<00:08,  2.95it/s]
+ 62%|██████████████████████████▉                | 40/64 [00:13<00:08,  2.91it/s]
+ 64%|███████████████████████████▌               | 41/64 [00:14<00:07,  2.96it/s]
+ 66%|████████████████████████████▏              | 42/64 [00:14<00:07,  2.95it/s]
+ 67%|████████████████████████████▉              | 43/64 [00:14<00:07,  2.93it/s]
+ 69%|█████████████████████████████▌             | 44/64 [00:15<00:06,  2.90it/s]
+ 70%|██████████████████████████████▏            | 45/64 [00:15<00:06,  2.90it/s]
+ 72%|██████████████████████████████▉            | 46/64 [00:15<00:06,  2.88it/s]
+ 73%|███████████████████████████████▌           | 47/64 [00:16<00:05,  2.90it/s]
+ 75%|████████████████████████████████▎          | 48/64 [00:16<00:05,  2.90it/s]
+ 77%|████████████████████████████████▉          | 49/64 [00:16<00:05,  2.94it/s]
+ 78%|█████████████████████████████████▌         | 50/64 [00:17<00:04,  2.93it/s]
+ 80%|██████████████████████████████████▎        | 51/64 [00:17<00:04,  2.86it/s]
+ 81%|██████████████████████████████████▉        | 52/64 [00:17<00:04,  2.88it/s]
+ 83%|███████████████████████████████████▌       | 53/64 [00:18<00:03,  2.91it/s]
+ 84%|████████████████████████████████████▎      | 54/64 [00:18<00:03,  2.91it/s]
+ 86%|████████████████████████████████████▉      | 55/64 [00:18<00:03,  2.93it/s]
+ 88%|█████████████████████████████████████▋     | 56/64 [00:19<00:02,  2.93it/s]
+ 89%|██████████████████████████████████████▎    | 57/64 [00:19<00:02,  2.90it/s]
+ 91%|██████████████████████████████████████▉    | 58/64 [00:19<00:02,  2.94it/s]
+ 92%|███████████████████████████████████████▋   | 59/64 [00:20<00:01,  2.89it/s]
+ 94%|████████████████████████████████████████▎  | 60/64 [00:20<00:01,  2.85it/s]
+ 95%|████████████████████████████████████████▉  | 61/64 [00:20<00:01,  2.88it/s]
+ 97%|█████████████████████████████████████████▋ | 62/64 [00:21<00:00,  2.92it/s]
+ 98%|██████████████████████████████████████████▎| 63/64 [00:21<00:00,  2.90it/s]
+                                                                                
+{'eval_loss': 1.4378063678741455, 'eval_runtime': 22.1818, 'eval_samples_per_second': 45.713, 'eval_steps_per_second': 2.885, 'epoch': 1.0}
+100%|█████████████████████████████████████████| 588/588 [06:31<00:00,  1.84it/s]
+100%|███████████████████████████████████████████| 64/64 [00:22<00:00,  2.89it/s]
+{'train_runtime': 392.3671, 'train_samples_per_second': 23.957, 'train_steps_per_second': 1.499, 'train_loss': 0.7454693366070183, 'epoch': 1.0}
+100%|█████████████████████████████████████████| 588/588 [06:32<00:00,  1.50it/s]
+/usr/local/lib/python3.11/dist-packages/torch/nn/parallel/_functions.py:70: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn(
+100%|███████████████████████████████████████████| 64/64 [00:21<00:00,  2.91it/s]
+
+--- Final Results --- 
+Seed: 42
+Baseline PPL: 4.3367
+Patched PPL: 4.2114
+Improvement: 2.89%
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:               eval/loss ██▁▁
+wandb:            eval/runtime ▂▁██
+wandb: eval/samples_per_second ▇█▁▁
+wandb:   eval/steps_per_second ▇█▁▁
+wandb:             train/epoch ▁▂▂▃▄▄▅▆▆▇████▁▂▂▃▄▄▅▆▆▇████
+wandb:       train/global_step ▁▂▂▃▄▄▅▆▆▇████▁▂▂▃▄▄▅▆▆▇████
+wandb:         train/grad_norm ▁▁▃▄▃▃▃▅▁▄▄▁▂█▄▄▂▄▄▁▂▃
+wandb:     train/learning_rate █▇▇▆▅▅▄▃▂▂▁█▇▇▆▅▅▄▃▂▂▁
+wandb:              train/loss █▅▅▃▃▃▃▂▃▂▂▇▄▄▂▂▂▂▂▂▁▁
+wandb: 
+wandb: Run summary:
+wandb:                eval/loss 1.43781
+wandb:             eval/runtime 22.0551
+wandb:  eval/samples_per_second 45.976
+wandb:    eval/steps_per_second 2.902
+wandb:               total_flos 1248348915302400.0
+wandb:              train/epoch 1
+wandb:        train/global_step 588
+wandb:          train/grad_norm 28360.5293
+wandb:      train/learning_rate 2e-05
+wandb:               train/loss 0.6751
+wandb:               train_loss 0.74547
+wandb:            train_runtime 392.3671
+wandb: train_samples_per_second 23.957
+wandb:   train_steps_per_second 1.499
+wandb: 
+wandb: 🚀 View run baseline_vs_patched_lora_code_contests_seed42 at: https://wandb.ai/lam983039-student/att-gpu-experiment/runs/kqwzlycf
+wandb: ⭐️ View project at: https://wandb.ai/lam983039-student/att-gpu-experiment
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20251027_090313-kqwzlycf/logs
+
+--- Running Experiment with Seed: 10044 ---
+wandb: Tracking run with wandb version 0.21.0
+wandb: Run data is saved locally in /kaggle/working/faskdglklllkvmcvmbbzbzxcbz/wandb/run-20251027_091532-xw43rvhr
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run baseline_vs_patched_lora_code_contests_seed10044
+wandb: ⭐️ View project at https://wandb.ai/lam983039-student/att-gpu-experiment
+wandb: 🚀 View run at https://wandb.ai/lam983039-student/att-gpu-experiment/runs/xw43rvhr
+Resolving data files: 100%|█████████████████████| 39/39 [00:00<00:00, 45.46it/s]
+Resolving data files: 100%|██████████████████| 39/39 [00:00<00:00, 93848.45it/s]
+Collecting ~2.1M tokens...
+Token indices sequence length is longer than the specified maximum sequence length for this model (13399 > 1024). Running this sequence through the model will result in indexing errors
+Collected 2406474 tokens.
+Collecting ~0.2M tokens...
+Collected 259787 tokens.
+--- Preparing Baseline Model with LoRA ---
+/usr/local/lib/python3.11/dist-packages/peft/tuners/lora/layer.py:1803: UserWarning: fan_in_fan_out is set to False but the target module is `Conv1D`. Setting fan_in_fan_out to True.
+  warnings.warn(
+trainable params: 811,008 || all params: 125,250,816 || trainable%: 0.6475
+
+--- Preparing Patched Model with LoRA ---
+  ✓ base_model.model.transformer.h.0.attn.alpha_q      | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.0.attn.alpha_k      | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.0.attn.temperature  | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.0.attn.q_w1.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.0.attn.q_w2.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.0.attn.k_w3.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.0.attn.k_w4.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.0.attn.q_proj.weight | Shape: (64, 128)            | Params: 8,192
+  ✓ base_model.model.transformer.h.0.attn.k_proj.weight | Shape: (64, 128)            | Params: 8,192
+  ✓ base_model.model.transformer.h.0.attn.pre_norm_q.weight | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.0.attn.pre_norm_q.bias | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.0.attn.pre_norm_k.weight | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.0.attn.pre_norm_k.bias | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.1.attn.alpha_q      | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.1.attn.alpha_k      | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.1.attn.temperature  | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.1.attn.q_w1.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.1.attn.q_w2.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.1.attn.k_w3.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.1.attn.k_w4.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.1.attn.q_proj.weight | Shape: (64, 128)            | Params: 8,192
+  ✓ base_model.model.transformer.h.1.attn.k_proj.weight | Shape: (64, 128)            | Params: 8,192
+  ✓ base_model.model.transformer.h.1.attn.pre_norm_q.weight | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.1.attn.pre_norm_q.bias | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.1.attn.pre_norm_k.weight | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.1.attn.pre_norm_k.bias | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.2.attn.alpha_q      | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.2.attn.alpha_k      | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.2.attn.temperature  | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.2.attn.q_w1.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.2.attn.q_w2.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.2.attn.k_w3.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.2.attn.k_w4.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.2.attn.q_proj.weight | Shape: (64, 128)            | Params: 8,192
+  ✓ base_model.model.transformer.h.2.attn.k_proj.weight | Shape: (64, 128)            | Params: 8,192
+  ✓ base_model.model.transformer.h.2.attn.pre_norm_q.weight | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.2.attn.pre_norm_q.bias | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.2.attn.pre_norm_k.weight | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.2.attn.pre_norm_k.bias | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.3.attn.alpha_q      | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.3.attn.alpha_k      | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.3.attn.temperature  | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.3.attn.q_w1.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.3.attn.q_w2.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.3.attn.k_w3.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.3.attn.k_w4.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.3.attn.q_proj.weight | Shape: (64, 128)            | Params: 8,192
+  ✓ base_model.model.transformer.h.3.attn.k_proj.weight | Shape: (64, 128)            | Params: 8,192
+  ✓ base_model.model.transformer.h.3.attn.pre_norm_q.weight | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.3.attn.pre_norm_q.bias | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.3.attn.pre_norm_k.weight | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.3.attn.pre_norm_k.bias | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.4.attn.alpha_q      | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.4.attn.alpha_k      | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.4.attn.temperature  | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.4.attn.q_w1.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.4.attn.q_w2.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.4.attn.k_w3.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.4.attn.k_w4.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.4.attn.q_proj.weight | Shape: (64, 128)            | Params: 8,192
+  ✓ base_model.model.transformer.h.4.attn.k_proj.weight | Shape: (64, 128)            | Params: 8,192
+  ✓ base_model.model.transformer.h.4.attn.pre_norm_q.weight | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.4.attn.pre_norm_q.bias | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.4.attn.pre_norm_k.weight | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.4.attn.pre_norm_k.bias | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.5.attn.alpha_q      | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.5.attn.alpha_k      | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.5.attn.temperature  | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.5.attn.q_w1.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.5.attn.q_w2.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.5.attn.k_w3.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.5.attn.k_w4.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.5.attn.q_proj.weight | Shape: (64, 128)            | Params: 8,192
+  ✓ base_model.model.transformer.h.5.attn.k_proj.weight | Shape: (64, 128)            | Params: 8,192
+  ✓ base_model.model.transformer.h.5.attn.pre_norm_q.weight | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.5.attn.pre_norm_q.bias | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.5.attn.pre_norm_k.weight | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.5.attn.pre_norm_k.bias | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.6.attn.alpha_q      | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.6.attn.alpha_k      | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.6.attn.temperature  | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.6.attn.q_w1.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.6.attn.q_w2.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.6.attn.k_w3.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.6.attn.k_w4.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.6.attn.q_proj.weight | Shape: (64, 128)            | Params: 8,192
+  ✓ base_model.model.transformer.h.6.attn.k_proj.weight | Shape: (64, 128)            | Params: 8,192
+  ✓ base_model.model.transformer.h.6.attn.pre_norm_q.weight | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.6.attn.pre_norm_q.bias | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.6.attn.pre_norm_k.weight | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.6.attn.pre_norm_k.bias | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.7.attn.alpha_q      | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.7.attn.alpha_k      | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.7.attn.temperature  | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.7.attn.q_w1.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.7.attn.q_w2.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.7.attn.k_w3.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.7.attn.k_w4.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.7.attn.q_proj.weight | Shape: (64, 128)            | Params: 8,192
+  ✓ base_model.model.transformer.h.7.attn.k_proj.weight | Shape: (64, 128)            | Params: 8,192
+  ✓ base_model.model.transformer.h.7.attn.pre_norm_q.weight | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.7.attn.pre_norm_q.bias | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.7.attn.pre_norm_k.weight | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.7.attn.pre_norm_k.bias | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.8.attn.alpha_q      | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.8.attn.alpha_k      | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.8.attn.temperature  | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.8.attn.q_w1.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.8.attn.q_w2.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.8.attn.k_w3.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.8.attn.k_w4.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.8.attn.q_proj.weight | Shape: (64, 128)            | Params: 8,192
+  ✓ base_model.model.transformer.h.8.attn.k_proj.weight | Shape: (64, 128)            | Params: 8,192
+  ✓ base_model.model.transformer.h.8.attn.pre_norm_q.weight | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.8.attn.pre_norm_q.bias | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.8.attn.pre_norm_k.weight | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.8.attn.pre_norm_k.bias | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.9.attn.alpha_q      | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.9.attn.alpha_k      | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.9.attn.temperature  | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.9.attn.q_w1.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.9.attn.q_w2.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.9.attn.k_w3.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.9.attn.k_w4.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.9.attn.q_proj.weight | Shape: (64, 128)            | Params: 8,192
+  ✓ base_model.model.transformer.h.9.attn.k_proj.weight | Shape: (64, 128)            | Params: 8,192
+  ✓ base_model.model.transformer.h.9.attn.pre_norm_q.weight | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.9.attn.pre_norm_q.bias | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.9.attn.pre_norm_k.weight | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.9.attn.pre_norm_k.bias | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.10.attn.alpha_q     | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.10.attn.alpha_k     | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.10.attn.temperature | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.10.attn.q_w1.weight | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.10.attn.q_w2.weight | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.10.attn.k_w3.weight | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.10.attn.k_w4.weight | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.10.attn.q_proj.weight | Shape: (64, 128)            | Params: 8,192
+  ✓ base_model.model.transformer.h.10.attn.k_proj.weight | Shape: (64, 128)            | Params: 8,192
+  ✓ base_model.model.transformer.h.10.attn.pre_norm_q.weight | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.10.attn.pre_norm_q.bias | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.10.attn.pre_norm_k.weight | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.10.attn.pre_norm_k.bias | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.11.attn.alpha_q     | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.11.attn.alpha_k     | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.11.attn.temperature | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.11.attn.q_w1.weight | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.11.attn.q_w2.weight | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.11.attn.k_w3.weight | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.11.attn.k_w4.weight | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.11.attn.q_proj.weight | Shape: (64, 128)            | Params: 8,192
+  ✓ base_model.model.transformer.h.11.attn.k_proj.weight | Shape: (64, 128)            | Params: 8,192
+  ✓ base_model.model.transformer.h.11.attn.pre_norm_q.weight | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.11.attn.pre_norm_q.bias | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.11.attn.pre_norm_k.weight | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.11.attn.pre_norm_k.bias | Shape: (64,)                | Params: 64
+============================================================
+Total Factorized Attention params: 593,328
+============================================================
+
+trainable params: 1,404,336 || all params: 125,844,144 || trainable%: 1.1159
+Found 2 GPUs.
+
+--- Training Baseline LoRA Model ---
+No label_names provided for model class `PeftModelForCausalLM`. Since `PeftModel` hides base models input arguments, if label_names is not given, label_names can't be set automatically within `Trainer`. Note that empty label_names list will be used instead.
+{'loss': 1.0551, 'grad_norm': 28724.64453125, 'learning_rate': 0.00027499999999999996, 'epoch': 0.09}
+{'loss': 0.8681, 'grad_norm': 41925.85546875, 'learning_rate': 0.00024948979591836733, 'epoch': 0.17}
+{'loss': 0.8353, 'grad_norm': 30985.267578125, 'learning_rate': 0.00022397959183673467, 'epoch': 0.26}
+{'loss': 0.7899, 'grad_norm': 32219.232421875, 'learning_rate': 0.00019846938775510203, 'epoch': 0.34}
+{'loss': 0.7657, 'grad_norm': 28739.935546875, 'learning_rate': 0.00017295918367346937, 'epoch': 0.43}
+{'loss': 0.7527, 'grad_norm': 31989.990234375, 'learning_rate': 0.0001474489795918367, 'epoch': 0.51}
+{'loss': 0.7545, 'grad_norm': 27441.744140625, 'learning_rate': 0.00012193877551020408, 'epoch': 0.6}
+{'loss': 0.7358, 'grad_norm': 28401.361328125, 'learning_rate': 9.642857142857143e-05, 'epoch': 0.68}
+{'loss': 0.7359, 'grad_norm': 29625.576171875, 'learning_rate': 7.091836734693877e-05, 'epoch': 0.77}
+{'loss': 0.7297, 'grad_norm': 29991.65625, 'learning_rate': 4.540816326530612e-05, 'epoch': 0.85}
+{'loss': 0.7108, 'grad_norm': 33503.73828125, 'learning_rate': 1.989795918367347e-05, 'epoch': 0.94}
+100%|█████████████████████████████████████████| 588/588 [04:49<00:00,  2.40it/s]/usr/local/lib/python3.11/dist-packages/torch/nn/parallel/_functions.py:70: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn(
+
+  0%|                                                    | 0/64 [00:00<?, ?it/s]
+  3%|█▍                                          | 2/64 [00:00<00:09,  6.22it/s]
+  5%|██                                          | 3/64 [00:00<00:12,  4.72it/s]
+  6%|██▊                                         | 4/64 [00:00<00:14,  4.13it/s]
+  8%|███▍                                        | 5/64 [00:01<00:15,  3.85it/s]
+  9%|████▏                                       | 6/64 [00:01<00:15,  3.68it/s]
+ 11%|████▊                                       | 7/64 [00:01<00:15,  3.63it/s]
+ 12%|█████▌                                      | 8/64 [00:02<00:15,  3.56it/s]
+ 14%|██████▏                                     | 9/64 [00:02<00:15,  3.51it/s]
+ 16%|██████▋                                    | 10/64 [00:02<00:15,  3.52it/s]
+ 17%|███████▍                                   | 11/64 [00:02<00:15,  3.51it/s]
+ 19%|████████                                   | 12/64 [00:03<00:14,  3.48it/s]
+ 20%|████████▋                                  | 13/64 [00:03<00:14,  3.48it/s]
+ 22%|█████████▍                                 | 14/64 [00:03<00:14,  3.48it/s]
+ 23%|██████████                                 | 15/64 [00:04<00:14,  3.48it/s]
+ 25%|██████████▊                                | 16/64 [00:04<00:14,  3.42it/s]
+ 27%|███████████▍                               | 17/64 [00:04<00:13,  3.48it/s]
+ 28%|████████████                               | 18/64 [00:04<00:13,  3.41it/s]
+ 30%|████████████▊                              | 19/64 [00:05<00:13,  3.35it/s]
+ 31%|█████████████▍                             | 20/64 [00:05<00:13,  3.38it/s]
+ 33%|██████████████                             | 21/64 [00:05<00:12,  3.40it/s]
+ 34%|██████████████▊                            | 22/64 [00:06<00:12,  3.44it/s]
+ 36%|███████████████▍                           | 23/64 [00:06<00:12,  3.39it/s]
+ 38%|████████████████▏                          | 24/64 [00:06<00:11,  3.37it/s]
+ 39%|████████████████▊                          | 25/64 [00:07<00:11,  3.37it/s]
+ 41%|█████████████████▍                         | 26/64 [00:07<00:11,  3.37it/s]
+ 42%|██████████████████▏                        | 27/64 [00:07<00:10,  3.38it/s]
+ 44%|██████████████████▊                        | 28/64 [00:07<00:10,  3.36it/s]
+ 45%|███████████████████▍                       | 29/64 [00:08<00:10,  3.37it/s]
+ 47%|████████████████████▏                      | 30/64 [00:08<00:10,  3.39it/s]
+ 48%|████████████████████▊                      | 31/64 [00:08<00:09,  3.40it/s]
+ 50%|█████████████████████▌                     | 32/64 [00:09<00:09,  3.39it/s]
+ 52%|██████████████████████▏                    | 33/64 [00:09<00:09,  3.31it/s]
+ 53%|██████████████████████▊                    | 34/64 [00:09<00:08,  3.40it/s]
+ 55%|███████████████████████▌                   | 35/64 [00:09<00:08,  3.42it/s]
+ 56%|████████████████████████▏                  | 36/64 [00:10<00:08,  3.42it/s]
+ 58%|████████████████████████▊                  | 37/64 [00:10<00:07,  3.38it/s]
+ 59%|█████████████████████████▌                 | 38/64 [00:10<00:07,  3.38it/s]
+ 61%|██████████████████████████▏                | 39/64 [00:11<00:07,  3.40it/s]
+ 62%|██████████████████████████▉                | 40/64 [00:11<00:06,  3.44it/s]
+ 64%|███████████████████████████▌               | 41/64 [00:11<00:06,  3.40it/s]
+ 66%|████████████████████████████▏              | 42/64 [00:12<00:06,  3.32it/s]
+ 67%|████████████████████████████▉              | 43/64 [00:12<00:06,  3.36it/s]
+ 69%|█████████████████████████████▌             | 44/64 [00:12<00:05,  3.40it/s]
+ 70%|██████████████████████████████▏            | 45/64 [00:12<00:05,  3.41it/s]
+ 72%|██████████████████████████████▉            | 46/64 [00:13<00:05,  3.41it/s]
+ 73%|███████████████████████████████▌           | 47/64 [00:13<00:05,  3.36it/s]
+ 75%|████████████████████████████████▎          | 48/64 [00:13<00:04,  3.41it/s]
+ 77%|████████████████████████████████▉          | 49/64 [00:14<00:04,  3.41it/s]
+ 78%|█████████████████████████████████▌         | 50/64 [00:14<00:04,  3.42it/s]
+ 80%|██████████████████████████████████▎        | 51/64 [00:14<00:03,  3.41it/s]
+ 81%|██████████████████████████████████▉        | 52/64 [00:15<00:03,  3.40it/s]
+ 83%|███████████████████████████████████▌       | 53/64 [00:15<00:03,  3.39it/s]
+ 84%|████████████████████████████████████▎      | 54/64 [00:15<00:02,  3.43it/s]
+ 86%|████████████████████████████████████▉      | 55/64 [00:15<00:02,  3.39it/s]
+ 88%|█████████████████████████████████████▋     | 56/64 [00:16<00:02,  3.32it/s]
+ 89%|██████████████████████████████████████▎    | 57/64 [00:16<00:02,  3.36it/s]
+ 91%|██████████████████████████████████████▉    | 58/64 [00:16<00:01,  3.37it/s]
+ 92%|███████████████████████████████████████▋   | 59/64 [00:17<00:01,  3.41it/s]
+ 94%|████████████████████████████████████████▎  | 60/64 [00:17<00:01,  3.42it/s]
+ 95%|████████████████████████████████████████▉  | 61/64 [00:17<00:00,  3.43it/s]
+ 97%|█████████████████████████████████████████▋ | 62/64 [00:17<00:00,  3.43it/s]
+ 98%|██████████████████████████████████████████▎| 63/64 [00:18<00:00,  3.46it/s]
+                                                                                
+{'eval_loss': 1.4606572389602661, 'eval_runtime': 18.6533, 'eval_samples_per_second': 54.36, 'eval_steps_per_second': 3.431, 'epoch': 1.0}
+100%|█████████████████████████████████████████| 588/588 [05:08<00:00,  2.40it/s]
+100%|███████████████████████████████████████████| 64/64 [00:18<00:00,  3.43it/s]
+{'train_runtime': 308.6273, 'train_samples_per_second': 30.457, 'train_steps_per_second': 1.905, 'train_loss': 0.7893874791203713, 'epoch': 1.0}
+100%|█████████████████████████████████████████| 588/588 [05:08<00:00,  1.91it/s]
+/usr/local/lib/python3.11/dist-packages/torch/nn/parallel/_functions.py:70: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn(
+100%|███████████████████████████████████████████| 64/64 [00:18<00:00,  3.43it/s]
+
+--- Training Patched LoRA Model ---
+No label_names provided for model class `PeftModelForCausalLM`. Since `PeftModel` hides base models input arguments, if label_names is not given, label_names can't be set automatically within `Trainer`. Note that empty label_names list will be used instead.
+A ConfigError was raised whilst setting the number of model parameters in Weights & Biases config.
+{'loss': 0.9788, 'grad_norm': 18566.552734375, 'learning_rate': 0.00027499999999999996, 'epoch': 0.09}
+{'loss': 0.8179, 'grad_norm': 27051.224609375, 'learning_rate': 0.00024948979591836733, 'epoch': 0.17}
+{'loss': 0.7859, 'grad_norm': 26767.890625, 'learning_rate': 0.00022397959183673467, 'epoch': 0.26}
+{'loss': 0.7416, 'grad_norm': 20191.7109375, 'learning_rate': 0.00019846938775510203, 'epoch': 0.34}
+{'loss': 0.7216, 'grad_norm': 21753.341796875, 'learning_rate': 0.00017295918367346937, 'epoch': 0.43}
+{'loss': 0.7078, 'grad_norm': 36889.171875, 'learning_rate': 0.0001474489795918367, 'epoch': 0.51}
+{'loss': 0.7088, 'grad_norm': 27819.482421875, 'learning_rate': 0.00012193877551020408, 'epoch': 0.6}
+{'loss': 0.692, 'grad_norm': 28803.38671875, 'learning_rate': 9.642857142857143e-05, 'epoch': 0.68}
+{'loss': 0.6921, 'grad_norm': 24986.791015625, 'learning_rate': 7.091836734693877e-05, 'epoch': 0.77}
+{'loss': 0.6856, 'grad_norm': 30588.62109375, 'learning_rate': 4.540816326530612e-05, 'epoch': 0.85}
+{'loss': 0.6671, 'grad_norm': 33918.37109375, 'learning_rate': 1.989795918367347e-05, 'epoch': 0.94}
+100%|█████████████████████████████████████████| 588/588 [06:11<00:00,  1.84it/s]
+  0%|                                                    | 0/64 [00:00<?, ?it/s]
+  3%|█▍                                          | 2/64 [00:00<00:10,  5.82it/s]
+  5%|██                                          | 3/64 [00:00<00:14,  4.23it/s]
+  6%|██▊                                         | 4/64 [00:01<00:16,  3.55it/s]
+  8%|███▍                                        | 5/64 [00:01<00:17,  3.30it/s]
+  9%|████▏                                       | 6/64 [00:02<00:26,  2.18it/s]
+ 11%|████▊                                       | 7/64 [00:02<00:23,  2.38it/s]
+ 12%|█████▌                                      | 8/64 [00:02<00:22,  2.51it/s]
+ 14%|██████▏                                     | 9/64 [00:03<00:21,  2.61it/s]
+ 16%|██████▋                                    | 10/64 [00:03<00:19,  2.72it/s]
+ 17%|███████▍                                   | 11/64 [00:03<00:19,  2.75it/s]
+ 19%|████████                                   | 12/64 [00:04<00:18,  2.77it/s]
+ 20%|████████▋                                  | 13/64 [00:04<00:18,  2.83it/s]
+ 22%|█████████▍                                 | 14/64 [00:04<00:17,  2.86it/s]
+ 23%|██████████                                 | 15/64 [00:05<00:17,  2.87it/s]
+ 25%|██████████▊                                | 16/64 [00:05<00:16,  2.88it/s]
+ 27%|███████████▍                               | 17/64 [00:05<00:16,  2.93it/s]
+ 28%|████████████                               | 18/64 [00:06<00:15,  2.93it/s]
+ 30%|████████████▊                              | 19/64 [00:06<00:15,  2.90it/s]
+ 31%|█████████████▍                             | 20/64 [00:06<00:15,  2.88it/s]
+ 33%|██████████████                             | 21/64 [00:07<00:14,  2.91it/s]
+ 34%|██████████████▊                            | 22/64 [00:07<00:14,  2.94it/s]
+ 36%|███████████████▍                           | 23/64 [00:07<00:14,  2.90it/s]
+ 38%|████████████████▏                          | 24/64 [00:08<00:13,  2.90it/s]
+ 39%|████████████████▊                          | 25/64 [00:08<00:13,  2.92it/s]
+ 41%|█████████████████▍                         | 26/64 [00:09<00:13,  2.90it/s]
+ 42%|██████████████████▏                        | 27/64 [00:09<00:12,  2.89it/s]
+ 44%|██████████████████▊                        | 28/64 [00:09<00:12,  2.92it/s]
+ 45%|███████████████████▍                       | 29/64 [00:10<00:11,  2.92it/s]
+ 47%|████████████████████▏                      | 30/64 [00:10<00:11,  2.93it/s]
+ 48%|████████████████████▊                      | 31/64 [00:10<00:11,  2.90it/s]
+ 50%|█████████████████████▌                     | 32/64 [00:11<00:11,  2.90it/s]
+ 52%|██████████████████████▏                    | 33/64 [00:11<00:10,  2.92it/s]
+ 53%|██████████████████████▊                    | 34/64 [00:11<00:10,  2.92it/s]
+ 55%|███████████████████████▌                   | 35/64 [00:12<00:09,  2.93it/s]
+ 56%|████████████████████████▏                  | 36/64 [00:12<00:09,  2.91it/s]
+ 58%|████████████████████████▊                  | 37/64 [00:12<00:09,  2.88it/s]
+ 59%|█████████████████████████▌                 | 38/64 [00:13<00:08,  2.92it/s]
+ 61%|██████████████████████████▏                | 39/64 [00:13<00:08,  2.94it/s]
+ 62%|██████████████████████████▉                | 40/64 [00:13<00:08,  2.91it/s]
+ 64%|███████████████████████████▌               | 41/64 [00:14<00:07,  2.92it/s]
+ 66%|████████████████████████████▏              | 42/64 [00:14<00:07,  2.94it/s]
+ 67%|████████████████████████████▉              | 43/64 [00:14<00:07,  2.89it/s]
+ 69%|█████████████████████████████▌             | 44/64 [00:15<00:06,  2.91it/s]
+ 70%|██████████████████████████████▏            | 45/64 [00:15<00:06,  2.91it/s]
+ 72%|██████████████████████████████▉            | 46/64 [00:15<00:06,  2.89it/s]
+ 73%|███████████████████████████████▌           | 47/64 [00:16<00:05,  2.94it/s]
+ 75%|████████████████████████████████▎          | 48/64 [00:16<00:05,  2.91it/s]
+ 77%|████████████████████████████████▉          | 49/64 [00:16<00:05,  2.89it/s]
+ 78%|█████████████████████████████████▌         | 50/64 [00:17<00:04,  2.92it/s]
+ 80%|██████████████████████████████████▎        | 51/64 [00:17<00:04,  2.88it/s]
+ 81%|██████████████████████████████████▉        | 52/64 [00:17<00:04,  2.90it/s]
+ 83%|███████████████████████████████████▌       | 53/64 [00:18<00:03,  2.85it/s]
+ 84%|████████████████████████████████████▎      | 54/64 [00:18<00:03,  2.92it/s]
+ 86%|████████████████████████████████████▉      | 55/64 [00:18<00:03,  2.92it/s]
+ 88%|█████████████████████████████████████▋     | 56/64 [00:19<00:02,  2.90it/s]
+ 89%|██████████████████████████████████████▎    | 57/64 [00:19<00:02,  2.88it/s]
+ 91%|██████████████████████████████████████▉    | 58/64 [00:20<00:02,  2.92it/s]
+ 92%|███████████████████████████████████████▋   | 59/64 [00:20<00:01,  2.92it/s]
+ 94%|████████████████████████████████████████▎  | 60/64 [00:20<00:01,  2.95it/s]
+ 95%|████████████████████████████████████████▉  | 61/64 [00:21<00:01,  2.89it/s]
+ 97%|█████████████████████████████████████████▋ | 62/64 [00:21<00:00,  2.95it/s]
+ 98%|██████████████████████████████████████████▎| 63/64 [00:21<00:00,  2.96it/s]
+                                                                                
+{'eval_loss': 1.428336501121521, 'eval_runtime': 22.2252, 'eval_samples_per_second': 45.624, 'eval_steps_per_second': 2.88, 'epoch': 1.0}
+100%|█████████████████████████████████████████| 588/588 [06:34<00:00,  1.84it/s]
+100%|███████████████████████████████████████████| 64/64 [00:22<00:00,  2.99it/s]
+{'train_runtime': 394.7181, 'train_samples_per_second': 23.814, 'train_steps_per_second': 1.49, 'train_loss': 0.7411673636663527, 'epoch': 1.0}
+100%|█████████████████████████████████████████| 588/588 [06:34<00:00,  1.49it/s]
+/usr/local/lib/python3.11/dist-packages/torch/nn/parallel/_functions.py:70: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn(
+100%|███████████████████████████████████████████| 64/64 [00:22<00:00,  2.89it/s]
+
+--- Final Results --- 
+Seed: 10044
+Baseline PPL: 4.3088
+Patched PPL: 4.1718
+Improvement: 3.18%
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:               eval/loss ██▁▁
+wandb:            eval/runtime ▁▁██
+wandb: eval/samples_per_second ██▁▁
+wandb:   eval/steps_per_second ██▁▁
+wandb:             train/epoch ▁▂▂▃▄▄▅▆▆▇████▁▂▂▃▄▄▅▆▆▇████
+wandb:       train/global_step ▁▂▂▃▄▄▅▆▆▇████▁▂▂▃▄▄▅▆▆▇████
+wandb:         train/grad_norm ▄█▅▅▄▅▄▄▄▄▅▁▄▃▁▂▆▄▄▃▅▆
+wandb:     train/learning_rate █▇▇▆▅▅▄▃▂▂▁█▇▇▆▅▅▄▃▂▂▁
+wandb:              train/loss █▅▄▃▃▃▃▂▂▂▂▇▄▃▂▂▂▂▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:                eval/loss 1.42834
+wandb:             eval/runtime 22.269
+wandb:  eval/samples_per_second 45.534
+wandb:    eval/steps_per_second 2.874
+wandb:               total_flos 1248348915302400.0
+wandb:              train/epoch 1
+wandb:        train/global_step 588
+wandb:          train/grad_norm 33918.37109
+wandb:      train/learning_rate 2e-05
+wandb:               train/loss 0.6671
+wandb:               train_loss 0.74117
+wandb:            train_runtime 394.7181
+wandb: train_samples_per_second 23.814
+wandb:   train_steps_per_second 1.49
+wandb: 
+wandb: 🚀 View run baseline_vs_patched_lora_code_contests_seed10044 at: https://wandb.ai/lam983039-student/att-gpu-experiment/runs/xw43rvhr
+wandb: ⭐️ View project at: https://wandb.ai/lam983039-student/att-gpu-experiment
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20251027_091532-xw43rvhr/logs
+
+--- Running Experiment with Seed: 1594044 ---
+wandb: Tracking run with wandb version 0.21.0
+wandb: Run data is saved locally in /kaggle/working/faskdglklllkvmcvmbbzbzxcbz/wandb/run-20251027_092813-i1cqtfsu
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run baseline_vs_patched_lora_code_contests_seed1594044
+wandb: ⭐️ View project at https://wandb.ai/lam983039-student/att-gpu-experiment
+wandb: 🚀 View run at https://wandb.ai/lam983039-student/att-gpu-experiment/runs/i1cqtfsu
+Resolving data files: 100%|█████████████████████| 39/39 [00:00<00:00, 81.36it/s]
+Resolving data files: 100%|██████████████████| 39/39 [00:00<00:00, 78417.00it/s]
+Collecting ~2.1M tokens...
+Token indices sequence length is longer than the specified maximum sequence length for this model (13399 > 1024). Running this sequence through the model will result in indexing errors
+Collected 2406474 tokens.
+Collecting ~0.2M tokens...
+Collected 259787 tokens.
+--- Preparing Baseline Model with LoRA ---
+/usr/local/lib/python3.11/dist-packages/peft/tuners/lora/layer.py:1803: UserWarning: fan_in_fan_out is set to False but the target module is `Conv1D`. Setting fan_in_fan_out to True.
+  warnings.warn(
+trainable params: 811,008 || all params: 125,250,816 || trainable%: 0.6475
+
+--- Preparing Patched Model with LoRA ---
+  ✓ base_model.model.transformer.h.0.attn.alpha_q      | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.0.attn.alpha_k      | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.0.attn.temperature  | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.0.attn.q_w1.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.0.attn.q_w2.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.0.attn.k_w3.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.0.attn.k_w4.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.0.attn.q_proj.weight | Shape: (64, 128)            | Params: 8,192
+  ✓ base_model.model.transformer.h.0.attn.k_proj.weight | Shape: (64, 128)            | Params: 8,192
+  ✓ base_model.model.transformer.h.0.attn.pre_norm_q.weight | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.0.attn.pre_norm_q.bias | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.0.attn.pre_norm_k.weight | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.0.attn.pre_norm_k.bias | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.1.attn.alpha_q      | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.1.attn.alpha_k      | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.1.attn.temperature  | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.1.attn.q_w1.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.1.attn.q_w2.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.1.attn.k_w3.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.1.attn.k_w4.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.1.attn.q_proj.weight | Shape: (64, 128)            | Params: 8,192
+  ✓ base_model.model.transformer.h.1.attn.k_proj.weight | Shape: (64, 128)            | Params: 8,192
+  ✓ base_model.model.transformer.h.1.attn.pre_norm_q.weight | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.1.attn.pre_norm_q.bias | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.1.attn.pre_norm_k.weight | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.1.attn.pre_norm_k.bias | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.2.attn.alpha_q      | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.2.attn.alpha_k      | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.2.attn.temperature  | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.2.attn.q_w1.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.2.attn.q_w2.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.2.attn.k_w3.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.2.attn.k_w4.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.2.attn.q_proj.weight | Shape: (64, 128)            | Params: 8,192
+  ✓ base_model.model.transformer.h.2.attn.k_proj.weight | Shape: (64, 128)            | Params: 8,192
+  ✓ base_model.model.transformer.h.2.attn.pre_norm_q.weight | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.2.attn.pre_norm_q.bias | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.2.attn.pre_norm_k.weight | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.2.attn.pre_norm_k.bias | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.3.attn.alpha_q      | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.3.attn.alpha_k      | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.3.attn.temperature  | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.3.attn.q_w1.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.3.attn.q_w2.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.3.attn.k_w3.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.3.attn.k_w4.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.3.attn.q_proj.weight | Shape: (64, 128)            | Params: 8,192
+  ✓ base_model.model.transformer.h.3.attn.k_proj.weight | Shape: (64, 128)            | Params: 8,192
+  ✓ base_model.model.transformer.h.3.attn.pre_norm_q.weight | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.3.attn.pre_norm_q.bias | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.3.attn.pre_norm_k.weight | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.3.attn.pre_norm_k.bias | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.4.attn.alpha_q      | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.4.attn.alpha_k      | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.4.attn.temperature  | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.4.attn.q_w1.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.4.attn.q_w2.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.4.attn.k_w3.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.4.attn.k_w4.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.4.attn.q_proj.weight | Shape: (64, 128)            | Params: 8,192
+  ✓ base_model.model.transformer.h.4.attn.k_proj.weight | Shape: (64, 128)            | Params: 8,192
+  ✓ base_model.model.transformer.h.4.attn.pre_norm_q.weight | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.4.attn.pre_norm_q.bias | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.4.attn.pre_norm_k.weight | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.4.attn.pre_norm_k.bias | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.5.attn.alpha_q      | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.5.attn.alpha_k      | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.5.attn.temperature  | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.5.attn.q_w1.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.5.attn.q_w2.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.5.attn.k_w3.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.5.attn.k_w4.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.5.attn.q_proj.weight | Shape: (64, 128)            | Params: 8,192
+  ✓ base_model.model.transformer.h.5.attn.k_proj.weight | Shape: (64, 128)            | Params: 8,192
+  ✓ base_model.model.transformer.h.5.attn.pre_norm_q.weight | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.5.attn.pre_norm_q.bias | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.5.attn.pre_norm_k.weight | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.5.attn.pre_norm_k.bias | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.6.attn.alpha_q      | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.6.attn.alpha_k      | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.6.attn.temperature  | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.6.attn.q_w1.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.6.attn.q_w2.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.6.attn.k_w3.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.6.attn.k_w4.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.6.attn.q_proj.weight | Shape: (64, 128)            | Params: 8,192
+  ✓ base_model.model.transformer.h.6.attn.k_proj.weight | Shape: (64, 128)            | Params: 8,192
+  ✓ base_model.model.transformer.h.6.attn.pre_norm_q.weight | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.6.attn.pre_norm_q.bias | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.6.attn.pre_norm_k.weight | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.6.attn.pre_norm_k.bias | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.7.attn.alpha_q      | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.7.attn.alpha_k      | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.7.attn.temperature  | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.7.attn.q_w1.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.7.attn.q_w2.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.7.attn.k_w3.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.7.attn.k_w4.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.7.attn.q_proj.weight | Shape: (64, 128)            | Params: 8,192
+  ✓ base_model.model.transformer.h.7.attn.k_proj.weight | Shape: (64, 128)            | Params: 8,192
+  ✓ base_model.model.transformer.h.7.attn.pre_norm_q.weight | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.7.attn.pre_norm_q.bias | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.7.attn.pre_norm_k.weight | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.7.attn.pre_norm_k.bias | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.8.attn.alpha_q      | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.8.attn.alpha_k      | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.8.attn.temperature  | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.8.attn.q_w1.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.8.attn.q_w2.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.8.attn.k_w3.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.8.attn.k_w4.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.8.attn.q_proj.weight | Shape: (64, 128)            | Params: 8,192
+  ✓ base_model.model.transformer.h.8.attn.k_proj.weight | Shape: (64, 128)            | Params: 8,192
+  ✓ base_model.model.transformer.h.8.attn.pre_norm_q.weight | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.8.attn.pre_norm_q.bias | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.8.attn.pre_norm_k.weight | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.8.attn.pre_norm_k.bias | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.9.attn.alpha_q      | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.9.attn.alpha_k      | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.9.attn.temperature  | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.9.attn.q_w1.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.9.attn.q_w2.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.9.attn.k_w3.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.9.attn.k_w4.weight  | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.9.attn.q_proj.weight | Shape: (64, 128)            | Params: 8,192
+  ✓ base_model.model.transformer.h.9.attn.k_proj.weight | Shape: (64, 128)            | Params: 8,192
+  ✓ base_model.model.transformer.h.9.attn.pre_norm_q.weight | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.9.attn.pre_norm_q.bias | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.9.attn.pre_norm_k.weight | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.9.attn.pre_norm_k.bias | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.10.attn.alpha_q     | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.10.attn.alpha_k     | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.10.attn.temperature | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.10.attn.q_w1.weight | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.10.attn.q_w2.weight | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.10.attn.k_w3.weight | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.10.attn.k_w4.weight | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.10.attn.q_proj.weight | Shape: (64, 128)            | Params: 8,192
+  ✓ base_model.model.transformer.h.10.attn.k_proj.weight | Shape: (64, 128)            | Params: 8,192
+  ✓ base_model.model.transformer.h.10.attn.pre_norm_q.weight | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.10.attn.pre_norm_q.bias | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.10.attn.pre_norm_k.weight | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.10.attn.pre_norm_k.bias | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.11.attn.alpha_q     | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.11.attn.alpha_k     | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.11.attn.temperature | Shape: (1, 12, 1, 1)        | Params: 12
+  ✓ base_model.model.transformer.h.11.attn.q_w1.weight | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.11.attn.q_w2.weight | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.11.attn.k_w3.weight | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.11.attn.k_w4.weight | Shape: (128, 64)            | Params: 8,192
+  ✓ base_model.model.transformer.h.11.attn.q_proj.weight | Shape: (64, 128)            | Params: 8,192
+  ✓ base_model.model.transformer.h.11.attn.k_proj.weight | Shape: (64, 128)            | Params: 8,192
+  ✓ base_model.model.transformer.h.11.attn.pre_norm_q.weight | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.11.attn.pre_norm_q.bias | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.11.attn.pre_norm_k.weight | Shape: (64,)                | Params: 64
+  ✓ base_model.model.transformer.h.11.attn.pre_norm_k.bias | Shape: (64,)                | Params: 64
+============================================================
+Total Factorized Attention params: 593,328
+============================================================
+
+trainable params: 1,404,336 || all params: 125,844,144 || trainable%: 1.1159
+Found 2 GPUs.
+
+--- Training Baseline LoRA Model ---
+No label_names provided for model class `PeftModelForCausalLM`. Since `PeftModel` hides base models input arguments, if label_names is not given, label_names can't be set automatically within `Trainer`. Note that empty label_names list will be used instead.
+{'loss': 1.0467, 'grad_norm': 24759.56640625, 'learning_rate': 0.00027499999999999996, 'epoch': 0.09}
+{'loss': 0.8906, 'grad_norm': 30374.2265625, 'learning_rate': 0.00024948979591836733, 'epoch': 0.17}
+{'loss': 0.8353, 'grad_norm': 31725.19921875, 'learning_rate': 0.00022397959183673467, 'epoch': 0.26}
+{'loss': 0.783, 'grad_norm': 25064.40625, 'learning_rate': 0.00019846938775510203, 'epoch': 0.34}
+{'loss': 0.7768, 'grad_norm': 69019.765625, 'learning_rate': 0.00017295918367346937, 'epoch': 0.43}
+{'loss': 0.7712, 'grad_norm': 33130.16796875, 'learning_rate': 0.0001474489795918367, 'epoch': 0.51}
+{'loss': 0.7609, 'grad_norm': 31368.5859375, 'learning_rate': 0.00012193877551020408, 'epoch': 0.6}
+{'loss': 0.7275, 'grad_norm': 35196.63671875, 'learning_rate': 9.642857142857143e-05, 'epoch': 0.68}
+{'loss': 0.7195, 'grad_norm': 28352.341796875, 'learning_rate': 7.091836734693877e-05, 'epoch': 0.77}
+{'loss': 0.7126, 'grad_norm': 28687.208984375, 'learning_rate': 4.540816326530612e-05, 'epoch': 0.85}
+{'loss': 0.7288, 'grad_norm': 33266.8828125, 'learning_rate': 1.989795918367347e-05, 'epoch': 0.94}
+100%|█████████████████████████████████████████| 588/588 [04:49<00:00,  2.38it/s]/usr/local/lib/python3.11/dist-packages/torch/nn/parallel/_functions.py:70: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn(
+
+  0%|                                                    | 0/64 [00:00<?, ?it/s]
+  3%|█▍                                          | 2/64 [00:00<00:10,  6.13it/s]
+  5%|██                                          | 3/64 [00:00<00:13,  4.62it/s]
+  6%|██▊                                         | 4/64 [00:00<00:14,  4.10it/s]
+  8%|███▍                                        | 5/64 [00:01<00:15,  3.82it/s]
+  9%|████▏                                       | 6/64 [00:01<00:15,  3.67it/s]
+ 11%|████▊                                       | 7/64 [00:01<00:16,  3.55it/s]
+ 12%|█████▌                                      | 8/64 [00:02<00:15,  3.51it/s]
+ 14%|██████▏                                     | 9/64 [00:02<00:15,  3.47it/s]
+ 16%|██████▋                                    | 10/64 [00:02<00:15,  3.45it/s]
+ 17%|███████▍                                   | 11/64 [00:02<00:15,  3.42it/s]
+ 19%|████████                                   | 12/64 [00:03<00:15,  3.41it/s]
+ 20%|████████▋                                  | 13/64 [00:03<00:14,  3.41it/s]
+ 22%|█████████▍                                 | 14/64 [00:03<00:14,  3.46it/s]
+ 23%|██████████                                 | 15/64 [00:04<00:14,  3.40it/s]
+ 25%|██████████▊                                | 16/64 [00:04<00:14,  3.36it/s]
+ 27%|███████████▍                               | 17/64 [00:04<00:13,  3.38it/s]
+ 28%|████████████                               | 18/64 [00:05<00:13,  3.41it/s]
+ 30%|████████████▊                              | 19/64 [00:05<00:13,  3.43it/s]
+ 31%|█████████████▍                             | 20/64 [00:05<00:12,  3.39it/s]
+ 33%|██████████████                             | 21/64 [00:05<00:12,  3.32it/s]
+ 34%|██████████████▊                            | 22/64 [00:06<00:12,  3.34it/s]
+ 36%|███████████████▍                           | 23/64 [00:06<00:12,  3.36it/s]
+ 38%|████████████████▏                          | 24/64 [00:06<00:11,  3.38it/s]
+ 39%|████████████████▊                          | 25/64 [00:07<00:11,  3.38it/s]
+ 41%|█████████████████▍                         | 26/64 [00:07<00:11,  3.35it/s]
+ 42%|██████████████████▏                        | 27/64 [00:07<00:10,  3.39it/s]
+ 44%|██████████████████▊                        | 28/64 [00:07<00:10,  3.43it/s]
+ 45%|███████████████████▍                       | 29/64 [00:08<00:10,  3.39it/s]
+ 47%|████████████████████▏                      | 30/64 [00:08<00:09,  3.41it/s]
+ 48%|████████████████████▊                      | 31/64 [00:08<00:09,  3.31it/s]
+ 50%|█████████████████████▌                     | 32/64 [00:09<00:09,  3.34it/s]
+ 52%|██████████████████████▏                    | 33/64 [00:09<00:09,  3.36it/s]
+ 53%|██████████████████████▊                    | 34/64 [00:09<00:08,  3.37it/s]
+ 55%|███████████████████████▌                   | 35/64 [00:10<00:08,  3.34it/s]
+ 56%|████████████████████████▏                  | 36/64 [00:10<00:08,  3.37it/s]
+ 58%|████████████████████████▊                  | 37/64 [00:10<00:08,  3.33it/s]
+ 59%|█████████████████████████▌                 | 38/64 [00:10<00:07,  3.38it/s]
+ 61%|██████████████████████████▏                | 39/64 [00:11<00:07,  3.37it/s]
+ 62%|██████████████████████████▉                | 40/64 [00:11<00:07,  3.37it/s]
+ 64%|███████████████████████████▌               | 41/64 [00:11<00:06,  3.37it/s]
+ 66%|████████████████████████████▏              | 42/64 [00:12<00:06,  3.40it/s]
+ 67%|████████████████████████████▉              | 43/64 [00:12<00:06,  3.40it/s]
+ 69%|█████████████████████████████▌             | 44/64 [00:12<00:05,  3.40it/s]
+ 70%|██████████████████████████████▏            | 45/64 [00:13<00:05,  3.37it/s]
+ 72%|██████████████████████████████▉            | 46/64 [00:13<00:05,  3.40it/s]
+ 73%|███████████████████████████████▌           | 47/64 [00:13<00:04,  3.41it/s]
+ 75%|████████████████████████████████▎          | 48/64 [00:13<00:04,  3.43it/s]
+ 77%|████████████████████████████████▉          | 49/64 [00:14<00:04,  3.39it/s]
+ 78%|█████████████████████████████████▌         | 50/64 [00:14<00:04,  3.38it/s]
+ 80%|██████████████████████████████████▎        | 51/64 [00:14<00:03,  3.39it/s]
+ 81%|██████████████████████████████████▉        | 52/64 [00:15<00:03,  3.37it/s]
+ 83%|███████████████████████████████████▌       | 53/64 [00:15<00:03,  3.34it/s]
+ 84%|████████████████████████████████████▎      | 54/64 [00:15<00:02,  3.37it/s]
+ 86%|████████████████████████████████████▉      | 55/64 [00:16<00:02,  3.36it/s]
+ 88%|█████████████████████████████████████▋     | 56/64 [00:16<00:02,  3.39it/s]
+ 89%|██████████████████████████████████████▎    | 57/64 [00:16<00:02,  3.36it/s]
+ 91%|██████████████████████████████████████▉    | 58/64 [00:16<00:01,  3.37it/s]
+ 92%|███████████████████████████████████████▋   | 59/64 [00:17<00:01,  3.34it/s]
+ 94%|████████████████████████████████████████▎  | 60/64 [00:17<00:01,  3.38it/s]
+ 95%|████████████████████████████████████████▉  | 61/64 [00:17<00:00,  3.40it/s]
+ 97%|█████████████████████████████████████████▋ | 62/64 [00:18<00:00,  3.40it/s]
+ 98%|██████████████████████████████████████████▎| 63/64 [00:18<00:00,  3.39it/s]
+100%|███████████████████████████████████████████| 64/64 [00:18<00:00,  3.42it/s]
+{'eval_loss': 1.4649665355682373, 'eval_runtime': 18.8183, 'eval_samples_per_second': 53.884, 'eval_steps_per_second': 3.401, 'epoch': 1.0}
+
+100%|█████████████████████████████████████████| 588/588 [05:08<00:00,  2.38it/s]
+{'train_runtime': 308.8983, 'train_samples_per_second': 30.431, 'train_steps_per_second': 1.904, 'train_loss': 0.7907902107757776, 'epoch': 1.0}
+100%|█████████████████████████████████████████| 588/588 [05:08<00:00,  1.90it/s]
+/usr/local/lib/python3.11/dist-packages/torch/nn/parallel/_functions.py:70: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn(
+100%|███████████████████████████████████████████| 64/64 [00:18<00:00,  3.42it/s]
+
+--- Training Patched LoRA Model ---
+No label_names provided for model class `PeftModelForCausalLM`. Since `PeftModel` hides base models input arguments, if label_names is not given, label_names can't be set automatically within `Trainer`. Note that empty label_names list will be used instead.
+A ConfigError was raised whilst setting the number of model parameters in Weights & Biases config.
+{'loss': 0.9789, 'grad_norm': 18799.828125, 'learning_rate': 0.00027499999999999996, 'epoch': 0.09}
+{'loss': 0.8428, 'grad_norm': 21815.0078125, 'learning_rate': 0.00024948979591836733, 'epoch': 0.17}
+{'loss': 0.7916, 'grad_norm': 24450.052734375, 'learning_rate': 0.00022397959183673467, 'epoch': 0.26}
+{'loss': 0.7376, 'grad_norm': 27003.78125, 'learning_rate': 0.00019846938775510203, 'epoch': 0.34}
+{'loss': 0.7311, 'grad_norm': 57131.046875, 'learning_rate': 0.00017295918367346937, 'epoch': 0.43}
+{'loss': 0.7278, 'grad_norm': 25354.28515625, 'learning_rate': 0.0001474489795918367, 'epoch': 0.51}
+{'loss': 0.7167, 'grad_norm': 29104.712890625, 'learning_rate': 0.00012193877551020408, 'epoch': 0.6}
+{'loss': 0.6827, 'grad_norm': 26234.943359375, 'learning_rate': 9.642857142857143e-05, 'epoch': 0.68}
+{'loss': 0.6789, 'grad_norm': 26408.1640625, 'learning_rate': 7.091836734693877e-05, 'epoch': 0.77}
+{'loss': 0.6676, 'grad_norm': 28142.357421875, 'learning_rate': 4.540816326530612e-05, 'epoch': 0.85}
+{'loss': 0.6875, 'grad_norm': 28652.74609375, 'learning_rate': 1.989795918367347e-05, 'epoch': 0.94}
+100%|█████████████████████████████████████████| 588/588 [06:12<00:00,  1.84it/s]
+  0%|                                                    | 0/64 [00:00<?, ?it/s]
+  3%|█▍                                          | 2/64 [00:00<00:10,  6.05it/s]
+  5%|██                                          | 3/64 [00:00<00:14,  4.20it/s]
+  6%|██▊                                         | 4/64 [00:01<00:16,  3.67it/s]
+  8%|███▍                                        | 5/64 [00:01<00:17,  3.35it/s]
+  9%|████▏                                       | 6/64 [00:02<00:26,  2.20it/s]
+ 11%|████▊                                       | 7/64 [00:02<00:23,  2.44it/s]
+ 12%|█████▌                                      | 8/64 [00:02<00:22,  2.55it/s]
+ 14%|██████▏                                     | 9/64 [00:03<00:20,  2.67it/s]
+ 16%|██████▋                                    | 10/64 [00:03<00:19,  2.74it/s]
+ 17%|███████▍                                   | 11/64 [00:03<00:18,  2.81it/s]
+ 19%|████████                                   | 12/64 [00:04<00:18,  2.80it/s]
+ 20%|████████▋                                  | 13/64 [00:04<00:17,  2.85it/s]
+ 22%|█████████▍                                 | 14/64 [00:04<00:17,  2.86it/s]
+ 23%|██████████                                 | 15/64 [00:05<00:16,  2.92it/s]
+ 25%|██████████▊                                | 16/64 [00:05<00:16,  2.88it/s]
+ 27%|███████████▍                               | 17/64 [00:05<00:15,  2.95it/s]
+ 28%|████████████                               | 18/64 [00:06<00:15,  2.94it/s]
+ 30%|████████████▊                              | 19/64 [00:06<00:15,  2.89it/s]
+ 31%|█████████████▍                             | 20/64 [00:06<00:15,  2.92it/s]
+ 33%|██████████████                             | 21/64 [00:07<00:14,  2.95it/s]
+ 34%|██████████████▊                            | 22/64 [00:07<00:14,  2.92it/s]
+ 36%|███████████████▍                           | 23/64 [00:07<00:13,  2.96it/s]
+ 38%|████████████████▏                          | 24/64 [00:08<00:13,  2.96it/s]
+ 39%|████████████████▊                          | 25/64 [00:08<00:13,  2.94it/s]
+ 41%|█████████████████▍                         | 26/64 [00:08<00:13,  2.92it/s]
+ 42%|██████████████████▏                        | 27/64 [00:09<00:12,  2.93it/s]
+ 44%|██████████████████▊                        | 28/64 [00:09<00:12,  2.94it/s]
+ 45%|███████████████████▍                       | 29/64 [00:09<00:11,  2.93it/s]
+ 47%|████████████████████▏                      | 30/64 [00:10<00:11,  2.90it/s]
+ 48%|████████████████████▊                      | 31/64 [00:10<00:11,  2.94it/s]
+ 50%|█████████████████████▌                     | 32/64 [00:10<00:10,  2.96it/s]
+ 52%|██████████████████████▏                    | 33/64 [00:11<00:10,  2.86it/s]
+ 53%|██████████████████████▊                    | 34/64 [00:11<00:10,  2.91it/s]
+ 55%|███████████████████████▌                   | 35/64 [00:12<00:09,  2.92it/s]
+ 56%|████████████████████████▏                  | 36/64 [00:12<00:09,  2.94it/s]
+ 58%|████████████████████████▊                  | 37/64 [00:12<00:09,  2.90it/s]
+ 59%|█████████████████████████▌                 | 38/64 [00:13<00:08,  2.91it/s]
+ 61%|██████████████████████████▏                | 39/64 [00:13<00:08,  2.92it/s]
+ 62%|██████████████████████████▉                | 40/64 [00:13<00:08,  2.93it/s]
+ 64%|███████████████████████████▌               | 41/64 [00:14<00:07,  2.89it/s]
+ 66%|████████████████████████████▏              | 42/64 [00:14<00:07,  2.89it/s]
+ 67%|████████████████████████████▉              | 43/64 [00:14<00:07,  2.88it/s]
+ 69%|█████████████████████████████▌             | 44/64 [00:15<00:06,  2.93it/s]
+ 70%|██████████████████████████████▏            | 45/64 [00:15<00:06,  2.93it/s]
+ 72%|██████████████████████████████▉            | 46/64 [00:15<00:06,  2.85it/s]
+ 73%|███████████████████████████████▌           | 47/64 [00:16<00:05,  2.89it/s]
+ 75%|████████████████████████████████▎          | 48/64 [00:16<00:05,  2.89it/s]
+ 77%|████████████████████████████████▉          | 49/64 [00:16<00:05,  2.91it/s]
+ 78%|█████████████████████████████████▌         | 50/64 [00:17<00:04,  2.84it/s]
+ 80%|██████████████████████████████████▎        | 51/64 [00:17<00:04,  2.88it/s]
+ 81%|██████████████████████████████████▉        | 52/64 [00:17<00:04,  2.91it/s]
+ 83%|███████████████████████████████████▌       | 53/64 [00:18<00:03,  2.88it/s]
+ 84%|████████████████████████████████████▎      | 54/64 [00:18<00:03,  2.88it/s]
+ 86%|████████████████████████████████████▉      | 55/64 [00:18<00:03,  2.90it/s]
+ 88%|█████████████████████████████████████▋     | 56/64 [00:19<00:02,  2.92it/s]
+ 89%|██████████████████████████████████████▎    | 57/64 [00:19<00:02,  2.90it/s]
+ 91%|██████████████████████████████████████▉    | 58/64 [00:19<00:02,  2.88it/s]
+ 92%|███████████████████████████████████████▋   | 59/64 [00:20<00:01,  2.88it/s]
+ 94%|████████████████████████████████████████▎  | 60/64 [00:20<00:01,  2.89it/s]
+ 95%|████████████████████████████████████████▉  | 61/64 [00:20<00:01,  2.89it/s]
+ 97%|█████████████████████████████████████████▋ | 62/64 [00:21<00:00,  2.86it/s]
+ 98%|██████████████████████████████████████████▎| 63/64 [00:21<00:00,  2.93it/s]
+                                                                                
+{'eval_loss': 1.4302277565002441, 'eval_runtime': 22.1814, 'eval_samples_per_second': 45.714, 'eval_steps_per_second': 2.885, 'epoch': 1.0}
+100%|█████████████████████████████████████████| 588/588 [06:34<00:00,  1.84it/s]
+100%|███████████████████████████████████████████| 64/64 [00:22<00:00,  2.95it/s]
+{'train_runtime': 394.7442, 'train_samples_per_second': 23.813, 'train_steps_per_second': 1.49, 'train_loss': 0.7447099653231043, 'epoch': 1.0}
+100%|█████████████████████████████████████████| 588/588 [06:34<00:00,  1.49it/s]
+/usr/local/lib/python3.11/dist-packages/torch/nn/parallel/_functions.py:70: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn(
+100%|███████████████████████████████████████████| 64/64 [00:22<00:00,  2.89it/s]
+
+--- Final Results --- 
+Seed: 1594044
+Baseline PPL: 4.3274
+Patched PPL: 4.1797
+Improvement: 3.41%
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:               eval/loss ██▁▁
+wandb:            eval/runtime ▁▁██
+wandb: eval/samples_per_second ██▁▁
+wandb:   eval/steps_per_second ██▁▁
+wandb:             train/epoch ▁▂▂▃▄▄▅▆▆▇████▁▂▂▃▄▄▅▆▆▇████
+wandb:       train/global_step ▁▂▂▃▄▄▅▆▆▇████▁▂▂▃▄▄▅▆▆▇████
+wandb:         train/grad_norm ▂▃▃▂█▃▃▃▂▂▃▁▁▂▂▆▂▂▂▂▂▂
+wandb:     train/learning_rate █▇▇▆▅▅▄▃▂▂▁█▇▇▆▅▅▄▃▂▂▁
+wandb:              train/loss █▅▄▃▃▃▃▂▂▂▂▇▄▃▂▂▂▂▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:                eval/loss 1.43023
+wandb:             eval/runtime 22.2283
+wandb:  eval/samples_per_second 45.618
+wandb:    eval/steps_per_second 2.879
+wandb:               total_flos 1248348915302400.0
+wandb:              train/epoch 1
+wandb:        train/global_step 588
+wandb:          train/grad_norm 28652.74609
+wandb:      train/learning_rate 2e-05
+wandb:               train/loss 0.6875
+wandb:               train_loss 0.74471
+wandb:            train_runtime 394.7442
+wandb: train_samples_per_second 23.813
+wandb:   train_steps_per_second 1.49
+wandb: 
+wandb: 🚀 View run baseline_vs_patched_lora_code_contests_seed1594044 at: https://wandb.ai/lam983039-student/att-gpu-experiment/runs/i1cqtfsu
+wandb: ⭐️ View project at: https://wandb.ai/lam983039-student/att-gpu-experiment
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20251027_092813-i1cqtfsu/logs
+
+--- Overall Results ---
+Baseline PPL: 4.3243 +/- 0.0142
+Patched PPL: 4.1876 +/- 0.0210
+Improvement: 3.16% +/- 0.26%
+wandb: Tracking run with wandb version 0.21.0
+wandb: Run data is saved locally in /kaggle/working/faskdglklllkvmcvmbbzbzxcbz/wandb/run-20251027_094053-sp27a58j
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Overall_Summary_code_contests
+wandb: ⭐️ View project at https://wandb.ai/lam983039-student/att-gpu-experiment
+wandb: 🚀 View run at https://wandb.ai/lam983039-student/att-gpu-experiment/runs/sp27a58j
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb: mean_baseline_ppl ▁
+wandb:  mean_improvement ▁
+wandb:  mean_patched_ppl ▁
+wandb:  std_baseline_ppl ▁
+wandb:   std_improvement ▁
+wandb:   std_patched_ppl ▁
+wandb: 
+wandb: Run summary:
+wandb: mean_baseline_ppl 4.32429
+wandb:  mean_improvement 3.16069
+wandb:  mean_patched_ppl 4.18762
+wandb:  std_baseline_ppl 0.0142
+wandb:   std_improvement 0.26395
+wandb:   std_patched_ppl 0.02101
+wandb: 
+wandb: 🚀 View run Overall_Summary_code_contests at: https://wandb.ai/lam983039-student/att-gpu-experiment/runs/sp27a58j
+wandb: ⭐️ View project at: https://wandb.ai/lam983039-student/att-gpu-experiment
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20251027_094053-sp27a58j/logs
