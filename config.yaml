@@ -5,7 +5,6 @@ seeds: [42, 10044, 1594044]
 dataset_name: "meta-math/MetaMathQA" # Advanced math problems
 # dataset_name: "deepmind/code_contests" # Competitive programming problems
 
-
 train_tokens: 2100000
 eval_tokens: 220000
 block_size: 256
